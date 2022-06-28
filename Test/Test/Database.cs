@@ -12,7 +12,7 @@ namespace ModularbeitM335
 
         public Database()
         {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "games.db3");
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Game>();

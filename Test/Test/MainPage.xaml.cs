@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using SQLite;
 
 namespace ModularbeitM335
 {
@@ -22,10 +16,9 @@ namespace ModularbeitM335
             collectionView.ItemsSource = await App.Database.GetPeopleAsync();
         }
 
-        async void OnButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(name.Text) && !string.IsNullOrWhiteSpace(developer.Text))
-            {
                 try
                 {
                     await App.Database.SavePersonAsync(new Game
@@ -39,7 +32,6 @@ namespace ModularbeitM335
                 catch (Exception ex)
                 {
                     _ = DisplayAlert("Notification", "an unexpected error has occured: " + ex, "ok");
-
                 }
                 finally
                 {
@@ -48,17 +40,8 @@ namespace ModularbeitM335
                     date.Date = DateTime.Now;
                     collectionView.ItemsSource = await App.Database.GetPeopleAsync();
                 }
-
-
-
-
-
-
-            }
             else
-            {
                 _ = DisplayAlert("Notification", "Not all necessairy information was given", "ok");
-            }
         }
     }
 }

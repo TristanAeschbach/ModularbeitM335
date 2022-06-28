@@ -1,40 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ModularbeitM335.MainPage"
              BackgroundColor="White">
 
-    <StackLayout Margin="30,10,30,0"
-                 >
-        <Label Text="Name:" 
+    <StackLayout Margin="30,10,30,0">
+        <Label Text="Name:"
                TextColor="Black"
-               FontSize="Medium"/>
+               FontSize="Medium" />
         <Entry x:Name="name"
-               Placeholder="Enter name" 
+               Placeholder="Enter name"
                PlaceholderColor="Black"
-               TextColor="Black"/>
+               TextColor="Black" />
         <Label Text="Developer:"
                TextColor="Black"
-               FontSize="Medium"/>
+               FontSize="Medium" />
         <Entry x:Name="developer"
                Placeholder="Enter developer"
                PlaceholderColor="Black"
-               TextColor="Black"/>
+               TextColor="Black" />
 
         <Label Text="Release Date:"
                TextColor="Black"
-               FontSize="Medium"/>
+               FontSize="Medium" />
 
         <DatePicker x:Name="date"
                     Format="dd/MM/yyyy"
-                    TextColor="Black"/>
+                    TextColor="Black" />
 
 
         <Button Text="Add to Database"
                 Clicked="OnButtonClicked" />
         <Label Text="Games"
                TextColor="Black"
-               FontSize="Large"/>
+               FontSize="Large" />
 
         <CollectionView x:Name="collectionView">
             <CollectionView.ItemTemplate>
@@ -49,7 +49,7 @@
                         <Label Text="{Binding date}"
                                TextColor="Black"
                                FontSize="Small" />
-                        
+
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
